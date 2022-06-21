@@ -1,14 +1,14 @@
 <template>
   <div class="commit">
-    <a :href="commit.url">
+    <a :href="url">
       <div class="commit-header">
         <span class="commit-sha">
-          {{ commit.sha.substring(0, 7) }}
+          {{ sha.substring(0, 7) }}
         </span>
-        <span class="commit-date">{{ formatDate(commit.date) }}</span>
+        <span class="commit-date">{{ formatDate(date) }}</span>
       </div>
       <p>
-        {{ commit.message }}
+        {{ message }}
       </p>
     </a>
   </div>
@@ -16,7 +16,23 @@
 
 <script setup>
 defineProps({
-  commit: {
+  sha: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: Date,
+    required: true,
+  },
+  message: {
+    type: String,
+    required: true,
+  },
+  url: {
+    type: String,
+    required: true,
+  },
+  author: {
     type: Object,
     required: true,
   },
@@ -45,7 +61,7 @@ function formatDate(date) {
   padding: 0;
   border-radius: 0.25rem;
   background-color: #fafafa;
-  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
   margin-bottom: 1rem;
   min-width: 20%;
 
@@ -54,7 +70,7 @@ function formatDate(date) {
     color: inherit;
     width: 100%;
     height: 100%;
-    padding: 0.5rem;
+    padding: 0;
 
     .commit-header {
       display: flex;
@@ -77,12 +93,12 @@ function formatDate(date) {
 
     p {
       font-size: 0.875rem;
-      margin: 0.5rem 0;
+      margin: 0.5rem;
     }
   }
 
   &:hover {
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
   }
 }
 </style>

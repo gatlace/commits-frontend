@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import ReposView from "../views/ReposView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -8,13 +9,27 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView,
   },
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    path: "/repos",
+    name: "repos",
+    component: ReposView,
+    children: [
+      {
+        path: "",
+        name: "main-list",
+        component: () => import("../components/ReposGrid.vue"),
+      },
+      {
+        path: ":user",
+        component: () => import("../components/ReposGrid.vue"),
+        props: true,
+      },
+    ],
+  },
+  {
+    path: "/repos/:user",
+    name: "repos-user",
+    component: ReposView,
+    props: true,
   },
 ];
 

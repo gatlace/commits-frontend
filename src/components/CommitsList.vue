@@ -1,7 +1,7 @@
 <template>
   <div class="commits-list">
     <h1>Commits</h1>
-    <CommitItem v-for="commit in commits" :key="commit.sha" :commit="commit" />
+    <CommitItem v-for="commit in commits" :key="commit.sha" v-bind="commit" />
   </div>
 </template>
 
