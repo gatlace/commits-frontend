@@ -1,0 +1,57 @@
+Info 0    [19:51:13.056] Starting TS Server
+Info 1    [19:51:13.056] Version: 4.5.5
+Info 2    [19:51:13.056] Arguments: /home/zii/.nvm/versions/node/v16.15.1/bin/node /home/zii/coding/github-commits-frontend/node_modules/typescript/lib/tsserver.js --logFile /home/zii/coding/github-commits-frontend/.log/tsserver.log --logVerbosity info --cancellationPipeName /tmp/4fd36eec64d1d62b0ad51c424fa01028/tscancellation*
+Info 3    [19:51:13.056] Platform: linux NodeVersion: 16 CaseSensitive: true
+Info 4    [19:51:13.056] ServerMode: undefined syntaxOnly: false hasUnknownServerMode: undefined
+Info 5    [19:51:13.064] Format host information updated
+Info 6    [19:51:13.071] Search path: /home/zii/coding/github-commits-frontend/src/router
+Info 7    [19:51:13.072] For info: /home/zii/coding/github-commits-frontend/src/router/index.ts :: Config file name: /home/zii/coding/github-commits-frontend/tsconfig.json
+Info 8    [19:51:13.072] Creating configuration project /home/zii/coding/github-commits-frontend/tsconfig.json
+Info 9    [19:51:13.085] Config: /home/zii/coding/github-commits-frontend/tsconfig.json : {
+ "rootNames": [
+  "/home/zii/coding/github-commits-frontend/src/main.ts",
+  "/home/zii/coding/github-commits-frontend/src/shims-vue.d.ts",
+  "/home/zii/coding/github-commits-frontend/src/router/index.ts"
+ ],
+ "options": {
+  "target": 99,
+  "module": 99,
+  "strict": true,
+  "jsx": 1,
+  "moduleResolution": 2,
+  "skipLibCheck": true,
+  "esModuleInterop": true,
+  "allowSyntheticDefaultImports": true,
+  "forceConsistentCasingInFileNames": true,
+  "useDefineForClassFields": true,
+  "sourceMap": true,
+  "baseUrl": "/home/zii/coding/github-commits-frontend",
+  "types": [
+   "webpack-env"
+  ],
+  "paths": {
+   "@/*": [
+    "src/*"
+   ]
+  },
+  "lib": [
+   "lib.esnext.d.ts",
+   "lib.dom.d.ts",
+   "lib.dom.iterable.d.ts",
+   "lib.scripthost.d.ts"
+  ],
+  "pathsBasePath": "/home/zii/coding/github-commits-frontend",
+  "configFilePath": "/home/zii/coding/github-commits-frontend/tsconfig.json"
+ }
+}
+Info 10   [19:51:13.088] Starting updateGraphWorker: Project: /home/zii/coding/github-commits-frontend/tsconfig.json
+Info 11   [19:51:13.913] Finishing updateGraphWorker: Project: /home/zii/coding/github-commits-frontend/tsconfig.json Version: 1 structureChanged: true structureIsReused:: Not Elapsed: 824.680477000773ms
+Info 12   [19:51:13.913] Project '/home/zii/coding/github-commits-frontend/tsconfig.json' (Configured)
+Info 13   [19:51:13.913] 	Files (63)
+
+Info 14   [19:51:13.913] -----------------------------------------------
+Info 15   [20:18:13.444] DirectoryWatcher:: Triggered with /home/zii/coding/github-commits-frontend/src/components/CommitsList.vue 0:: WatchInfo: /home/zii/coding/github-commits-frontend/src 1 undefined Config: /home/zii/coding/github-commits-frontend/tsconfig.json WatchType: Wild card directory
+Info 16   [20:18:13.444] Project: /home/zii/coding/github-commits-frontend/tsconfig.json Detected file add/remove of non supported extension: /home/zii/coding/github-commits-frontend/src/components/CommitsList.vue
+Info 17   [20:18:13.444] Elapsed:: 0.6040129996836185ms DirectoryWatcher:: Triggered with /home/zii/coding/github-commits-frontend/src/components/CommitsList.vue 0:: WatchInfo: /home/zii/coding/github-commits-frontend/src 1 undefined Config: /home/zii/coding/github-commits-frontend/tsconfig.json WatchType: Wild card directory
+Info 18   [20:18:13.444] DirectoryWatcher:: Triggered with /home/zii/coding/github-commits-frontend/src/components/CommitsList.vue 0:: WatchInfo: /home/zii/coding/github-commits-frontend/src 1 undefined Project: /home/zii/coding/github-commits-frontend/tsconfig.json WatchType: Failed Lookup Locations
+Info 19   [20:18:13.444] Elapsed:: 0.19277099892497063ms DirectoryWatcher:: Triggered with /home/zii/coding/github-commits-frontend/src/components/CommitsList.vue 0:: WatchInfo: /home/zii/coding/github-commits-frontend/src 1 undefined Project: /home/zii/coding/github-commits-frontend/tsconfig.json WatchType: Failed Lookup Locations

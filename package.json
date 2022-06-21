@@ -33,18 +33,18 @@
   "eslintConfig": {
     "root": true,
     "env": {
-      "node": true
+      "node": true,
+      "vue/setup-compiler-macros": true
     },
     "extends": [
-      "plugin:vue/vue3-essential",
+      "plugin:vue/strongly-recommended",
       "eslint:recommended",
       "@vue/typescript/recommended",
       "plugin:prettier/recommended"
     ],
     "parserOptions": {
       "ecmaVersion": 2020
-    },
-    "rules": {}
+    }
   },
   "browserslist": [
     "> 1%",
