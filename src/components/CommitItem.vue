@@ -2,9 +2,7 @@
   <div class="commit">
     <a :href="url">
       <div class="commit-header">
-        <span class="commit-sha">
-          {{ sha.substring(0, 7) }}
-        </span>
+        <span class="commit-sha"> {{ sha.substring(0, 7) }} </span>
         <span class="commit-date">{{ formatDate(date) }}</span>
       </div>
       <p>
@@ -30,10 +28,6 @@ defineProps({
   },
   url: {
     type: String,
-    required: true,
-  },
-  author: {
-    type: Object,
     required: true,
   },
 });

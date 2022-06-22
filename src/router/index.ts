@@ -16,20 +16,20 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: "",
         name: "main-list",
-        component: () => import("../components/ReposGrid.vue"),
+        component: () => import("../components/ReposList.vue"),
       },
       {
         path: ":user",
-        component: () => import("../components/ReposGrid.vue"),
+        name: "user",
+        component: () => import("../components/ReposList.vue"),
+        props: true,
+      },
+      {
+        path: ":user/:repo",
+        component: () => import("../components/CommitsList.vue"),
         props: true,
       },
     ],
-  },
-  {
-    path: "/repos/:user",
-    name: "repos-user",
-    component: ReposView,
-    props: true,
   },
 ];
 

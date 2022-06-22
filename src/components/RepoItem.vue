@@ -1,6 +1,6 @@
 <template>
   <div class="repo">
-    <a :href="url">
+    <a :href="`/repos/${props.fullName}`">
       <div class="repo-header">
         <span class="name">
           {{ name }}
@@ -34,9 +34,11 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  fullName: {
+    type: String,
+    default: "",
+  },
 });
-
-console.log(props.createdAt);
 
 const formattedDate = () => {
   const options = {
