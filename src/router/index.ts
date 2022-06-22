@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import ReposView from "../views/ReposView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -11,7 +10,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/repos",
     name: "repos",
-    component: ReposView,
+    component: () => import("../views/ReposView.vue"),
     children: [
       {
         path: "",

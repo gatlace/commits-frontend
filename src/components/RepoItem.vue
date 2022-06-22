@@ -38,6 +38,10 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  pushedAt: {
+    type: String,
+    default: "",
+  },
 });
 
 const formattedDate = () => {

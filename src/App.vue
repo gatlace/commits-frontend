@@ -2,8 +2,9 @@
   <div>
     <nav>
       <router-link to="/">Home</router-link>
+      <router-link to="/repos">Repos</router-link>
     </nav>
-    <router-view />
+    <router-view :key="$route.fullPath" />
   </div>
 </template>
 
@@ -22,6 +23,7 @@ nav {
   a {
     font-weight: bold;
     color: #42b983;
+    padding: 5px;
 
     &.router-link-exact-active {
       color: #2c3e50;

@@ -42,7 +42,7 @@ const props = defineProps({
 const searchTerm = ref("");
 const showSearch = ref(false);
 
-const repos = await fetch(`https://api.github.com/users/${props.user}/repos`)
+let repos = await fetch(`https://api.github.com/users/${props.user}/repos`)
   .then((res) => res.json())
   .then((res) =>
     res.map((repo) => ({
@@ -51,10 +51,22 @@ const repos = await fetch(`https://api.github.com/users/${props.user}/repos`)
       url: repo.html_url,
       description: repo.description,
       createdAt: repo.created_at,
+      pushedAt: repo.pushed_at,
       fullName: repo.full_name,
     }))
   )
-  .catch((err) => {
+  .then((res) =>
+    res.sort((a, b) => {
+      if (b.pushedAt < a.pushedAt) {
+        return -1;
+      } else if (b.pushedAt > a.pushedAt) {
+        return 1;
+      } else {
+        return 0;
+      }
+    })
+  )
+  .catch(() => {
     return [];
   });
 
