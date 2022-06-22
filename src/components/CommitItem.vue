@@ -82,6 +82,7 @@ function formatDate(date) {
       .commit-date {
         font-size: 0.875rem;
         font-weight: bold;
+        color: #999;
       }
     }
 

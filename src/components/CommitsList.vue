@@ -17,7 +17,7 @@ defineEmits(["RepoChanged"]);
 const props = defineProps({
   user: {
     type: String,
-    default: "gatlace/commits-frontend",
+    default: "gatlace",
   },
   repo: {
     type: String,
@@ -39,7 +39,10 @@ const commits = await fetch(
         url: commit.html_url,
       };
     })
-  );
+  )
+  .catch((err) => {
+    console.error(err);
+  });
 </script>
 
 <style scoped lang="scss">

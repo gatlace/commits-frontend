@@ -1,13 +1,19 @@
 <template>
   <div class="repos">
     <h1>
-      <button @click="toggleSearch">User:</button>
-      <span v-if="!showSearch">{{ props.user }}</span>
-      <span v-else>
-        <form @submit="searchUser">
-          <input type="text" v-model="searchTerm" placeholder="Search..." />
-        </form>
-      </span>
+      <div class="header">
+        <button @click="toggleSearch">User:</button>
+        <span v-if="!showSearch">{{ props.user }}</span>
+        <span v-else>
+          <form @submit="searchUser">
+            <input
+              type="text"
+              v-model="searchTerm"
+              placeholder="Press Enter to submit"
+            />
+          </form>
+        </span>
+      </div>
     </h1>
     <h1>Repos</h1>
     <RepoItem :key="repo.id" v-for="repo in repos" v-bind="repo" />
@@ -57,13 +63,29 @@ function toggleSearch() {
 </script>
 
 <style scoped lang="scss">
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 button {
   font-size: inherit;
-  font-family: inherit;
   color: inherit;
-  background: transparent;
+  background-color: inherit;
+  border-radius: 2%;
   border: none;
-  cursor: pointer;
+  font-weight: inherit;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  padding: 0.5rem;
+  margin: 0.5rem;
+
+  &:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+    background-color: inherit;
+    cursor: pointer;
+  }
 }
 
 a {
