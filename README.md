@@ -15,14 +15,10 @@ It was given to me on the 6/20, I hope they weren't expecting it back the same d
 - Typescript
 - Yarn(wanted to try something new)
 
----
-
 ## Features
 
 - View public user repos
 - Search users
-
----
 
 ## Project setup
 
