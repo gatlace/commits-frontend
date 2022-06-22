@@ -70,12 +70,20 @@ const formattedDate = () => {
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: space-between;
       padding: 0.5rem;
 
       .name {
         font-size: 1.5rem;
         font-weight: bold;
+        width: 100%;
+        text-align: left;
+      }
+
+      a {
+        width: auto;
+        height: auto;
+        padding: 0.5rem;
       }
 
       .created-at {

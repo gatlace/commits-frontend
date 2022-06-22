@@ -7,8 +7,6 @@ It was given to me on the 6/20, I hope they weren't expecting it back the same d
 - ( too big of a framework to learn to use effectively in such a short period of time )
 - ( I will be learning it soon though )
 
----
-
 ## Technologies used
 
 - Vue
@@ -33,7 +31,7 @@ yarn serve
 ```
 
 These are the only two commands I really used, thanks to lint on save and not actually having to serve this anywhere.
-you could also use
+you could also use:
 
 ### Compiles and minifies for production
 

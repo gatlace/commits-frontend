@@ -1,22 +1,29 @@
 <template>
   <div class="repos">
-    <h1>
-      <div class="header">
-        <button @click="toggleSearch">User:</button>
-        <span v-if="!showSearch">{{ props.user }}</span>
-        <span v-else>
-          <form @submit="searchUser">
-            <input
-              type="text"
-              v-model="searchTerm"
-              placeholder="Press Enter to submit"
-            />
-          </form>
-        </span>
-      </div>
-    </h1>
-    <h1>Repos</h1>
-    <RepoItem :key="repo.id" v-for="repo in repos" v-bind="repo" />
+    <div class="repos-found" v-if="repos.length > 0">
+      <h1>
+        <div class="header">
+          <button @click="toggleSearch">User:</button>
+          <span v-if="!showSearch">{{ props.user }}</span>
+          <span v-else>
+            <form @submit="searchUser">
+              <input
+                type="text"
+                v-model="searchTerm"
+                placeholder="Press Enter to submit"
+              />
+            </form>
+          </span>
+        </div>
+      </h1>
+      <h1>Repos</h1>
+      <RepoItem :key="repo.id" v-for="repo in repos" v-bind="repo" />
+    </div>
+    <div v-else>
+      <button @click="() => this.$router.go(-2)">
+        <h1>No Repos Found :(</h1>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -46,7 +53,10 @@ const repos = await fetch(`https://api.github.com/users/${props.user}/repos`)
       createdAt: repo.created_at,
       fullName: repo.full_name,
     }))
-  );
+  )
+  .catch((err) => {
+    return [];
+  });
 
 function searchUser() {
   router.push({
@@ -88,24 +98,7 @@ button {
   }
 }
 
-a {
-  font-size: inherit;
-  color: inherit;
-  background-color: inherit;
-  border-radius: 2%;
-  border: none;
-  font-weight: inherit;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-  text-decoration: none;
-  padding: 0.5rem;
-
-  &:hover {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
-    background-color: inherit;
-    mouse-cursor: pointer;
-  }
-}
-.repos {
+.repos-found {
   display: flex;
   flex-direction: column;
   align-items: center;
